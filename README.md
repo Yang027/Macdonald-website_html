@@ -16,9 +16,9 @@ notice：沒有連接資料庫，所有資料都是local端
 ==
 打開`index.html`既可使用
 
-非盈利
-non-commercial,education only
-非盈利
-non-commercial,education only
-非盈利
-non-commercial,education only
+非盈利<br>
+non-commercial,education only<br>
+非盈利<br>
+non-commercial,education only<br>
+非盈利<br>
+non-commercial,education only<br>
