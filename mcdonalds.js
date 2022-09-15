@@ -5,7 +5,7 @@
 //login:208
 //menber:266
 
-{ // ------------------------------------index--------------------------------------------
+ // ------------------------------------index--------------------------------------------
 	var index_firstopen;
 	var index_tmp = sessionStorage.getItem("first");
 	var user = [];
@@ -16,6 +16,10 @@
 	var login; //boolean to judge whether log in 
 	//var defaultdiscount={};
 	//alert(index_tmp);
+		var SingUpAlluser = typeof JSON.parse(localStorage.getItem("User"))!='undefined'?[]:JSON.parse(localStorage.getItem("User"));
+
+	var SingUpperuser = {}; //object customer
+	var haveacc = false;
 	function index_load() {
 		//alert(index_tmp);
 		if (!index_tmp) {
@@ -83,7 +87,7 @@
 
 		}
 	}
-} { // -------------------------------shoppingcart_choice-----------------------------------
+ { // -------------------------------shoppingcart_choice-----------------------------------
 	var shoppingCart = [];
 
 	function shoppingcartLoad() {
@@ -140,13 +144,10 @@
 		//alert(sessionStorage.SCart);
 	}
 } { //--------------------------------- ---singup-------------------------------------------
-	var SingUpAlluser = [];
-	SingUpAlluser = JSON.parse(localStorage.getItem("User"));
-	var SingUpperuser = {}; //object customer
-	var haveacc = false;
+
 
 	function signup() {
-		var nowid = SingUpAlluser[SingUpAlluser.length - 1].id + 1;
+		var nowid = typeof JSON.parse(localStorage.getItem("User"))!='undefined'?0:JSON.parse(localStorage.getItem("User")).id + 1;
 		SingUpperuser.id = nowid;
 		//alert("now id:"+ peruser.id);
 		SingUpperuser.name = ($.trim($("input[name='name']").val()).toString());
@@ -534,6 +535,7 @@
 		//<2>判斷密碼是否正確？登錄：提醒錯誤
 		var index = 0;
 		Login_haveacc = false;
+		Login_alluser=JSON.parse(localStorage.getItem("User"));
 		for (var i = 0; i < Login_alluser.length; i++) {
 			//alert(alluser[i].name);
 			if (Login_alluser[i].email == $.trim($("input[name='email']").val()).toString()) //get mail
