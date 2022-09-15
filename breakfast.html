@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Breakfast</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link href="eCommerceAssets/styles/eCommerceStyle.css" rel="stylesheet" type="text/css">
+</head>
+<!--<script type="text/javascript">
+
+
+	
+
+</script>//-->
+<body  style="padding-top:100px" class="" onLoad="shoppingcartLoad()" >
+<nav class="navbar navbar-light bg-light navbar-expand-md fixed-top"> <a class="navbar-brand" href="index.html"><img src="img/mcdonalds.png" width="90px" alt="Brand"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="navbar-nav mr-auto">
+       <li class="nav-item active"><a class="nav-link" href="aboutus.html">關於我們</a></li>
+      <li class="nav-item "><a class="nav-link" href="hot.html">熱銷商品</a></li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">商品類別</a>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="breakfast.html">早餐</a> <a class="dropdown-item" href="worthy.html">午餐</a> </div>
+      </li>
+      <li class="nav-item "><a class="nav-link" href="sweetcard.html">甜心卡&點點卡</a></li>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse text-center justify-content-end" id="navbar">
+    <form class="form-inline mr-auto">
+      <a href="shoppingcart.html" class="navbar-brand"><img src="img/shoppingcart.png" alt="Brand" width="55px" ></a> <a class="navbar-brand" href="login.html"><img src="img/user.png" width="32px" alt="Brand"></a>
+    </form>
+    <form class="form-inline  ">
+      <input class="form-control mr-2" type="text" placeholder="搜索">
+    </form>
+    <button class="btn btn-outline-primary" type="submit" onClick="coming_soon('自己用眼睛找')">搜索</button>
+  </div>
+</nav>
+<!-- ------------------ bread-----------------------------------  -->
+<nav>
+  <ol class="breadcrumb  p-3 mb-2 bg-warning text-dark">
+    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+    <li class="breadcrumb-item active">早餐</li>
+  </ol>
+</nav>
+<!-- ------------------ bread end-----------------------------------  -->
+<div id=" ">
+  <header> 
+    <!-- This is the header content. It contains Logo and links -->
+    
+    <div id="headerLinks"></div>
+  </header>
+
+  <div id="content">
+    <section class="sidebar"> 
+      <!-- This adds a sidebar with 1 searchbox,2 menusets, each with 4 links -->
+      
+      <div id="menubar">
+        <nav class="menu">
+          <h2><!-- Title for menuset 1 -->所有餐點</h2>
+          <hr>
+          <ul>
+            <!-- List of links under menuset 1 -->
+            <li><a href="breakfast.html" title="Link">早餐</a></li>
+			<li><a href="worthy.html" title="Link">超值全餐</a></li>
+            <li><a href="superworthy.html" title="Link">超值全餐配餐</a></li>
+            <li><a href="superchoice.html" title="Link">極選系列</a></li>
+            <li><a href="ShareMeal.html" title="Link">麥當勞分享盒</a></li>
+            <li><a href="Happymeal.html" title="Link">Happy Meal</a></li>
+            <li><a href="coin.html" title="Link">銅板輕鬆點</a></li>
+            <li><a href="caffee.html" title="Link">McCafe</a></li>
+            <li><a href="dessert.html" title="Link">飲料與點心</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="mainContent">
+      <div class="productRow"><!-- Each product row contains info of 3 elements -->
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/1.png"></div>
+          <br>
+          <p class="price">$50</p>
+          <p class="productContent">滿福堡</p>
+          <input type="button" name="button" value="Buy" class="buyButton" style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('滿福堡','img/早餐/1.png',this,50)" >
+        </article>
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/2.png"></div>
+          <br>
+          <p class="price">$48</p>
+          <p class="productContent">豬肉滿福堡</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('豬肉滿福堡','img/早餐/2.png',this,48)">
+        </article>
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/3.png"></div>
+          <br>
+          <p class="price">$58</p>
+          <p class="productContent">豬肉滿福堡加蛋</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('豬肉滿福堡加蛋','img/早餐/3.png',this,58)">
+        </article>
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/4.png"></div>
+          <br>
+          <p class="price">$78</p>
+          <p class="productContent">無敵豬肉滿福堡加蛋</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('無敵豬肉滿福堡加蛋','img/早餐/4.png',this,78)">
+        </article>
+      </div>
+      <div class="productRow"> 
+        <!-- Each product row contains info of 3 elements -->
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/5.png"></div>
+          <br>
+          <p class="price">$50</p>
+          <p class="productContent">香雞滿福堡加蛋</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('香雞滿福堡加蛋','img/早餐/5.png',this,55)">
+        </article>
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/6.png"></div>
+          <br>
+          <p class="price">$58</p>
+          <p class="productContent">香雞滿福堡</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('香雞滿福堡','img/早餐/6.png',this,58)">
+        </article>
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/7.png"></div>
+          <br>
+          <p class="price">$58</p>
+          <p class="productContent">青蔬滿福堡</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('青蔬滿福堡','img/早餐/7.png',this,58)">
+        </article>
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/8.png"></div>
+          <br>
+          <p class="price">$62</p>
+          <p class="productContent">香雞蛋堡</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('香雞蛋堡','img/早餐/8.png',this,62)">
+        </article>
+      </div>
+      <div class="productRow">
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/9.png"></div>
+          <br>
+          <p class="price">$32</p>
+          <p class="productContent">吉士蛋堡</p><!--bug-->
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('吉士蛋堡','img/早餐/9.png',this,32)">
+        </article>
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/10.png"></div>
+          <br>
+          <p class="price">$62</p>
+          <p class="productContent">豬肉蛋堡</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('豬肉蛋堡','img/早餐/10.png',this,62)">
+        </article>
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/11.png"></div><!--bug-->
+          <br>
+          <p class="price">$50</p>
+          <p class="productContent">火腿蛋堡</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('火腿蛋堡','img/早餐/11.png',this,50)">
+        </article>
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/12.png"></div>
+          <br>
+          <p class="price">$39</p>
+          <p class="productContent">金黃薯餅烤土司</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('金黃薯餅烤土司','img/早餐/12.png',this,39)">
+        </article>
+      </div>
+      <div class="productRow">
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/13.png"></div>
+          <br>
+          <p class="price">$49</p>
+          <p class="productContent">火腿薯餅烤土司</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('火腿薯餅烤土司','img/早餐/13.png',this,49)">
+        </article>
+        <article class="productInfo">
+          <div><img alt="sample" src="img/早餐/14.png"></div>
+          <br>
+          <p class="price">$69</p>
+          <p class="productContent">脆雞腿排烤土司</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('脆雞腿排烤土司','img/早餐/14.png',this,69)">
+        </article>
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/15.png"></div>
+          <br>
+          <p class="price">$59</p>
+          <p class="productContent">黃金豬排烤土司</p><!--bug-->
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('黃金豬排烤土司','img/早餐/15.png',this,59)">
+        </article>
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/16.png"></div>
+          <br>
+          <p class="price">$69</p>
+          <p class="productContent">豬肉鬆餅</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('豬肉鬆餅','img/早餐/16.png',this,69)">
+        </article>
+      </div>
+      <div class="productRow">
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/17.png"></div>
+          <br>
+          <p class="price">$55</p>
+          <p class="productContent">鬆餅(3片) </p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('鬆餅(3片)','img/早餐/17.png',this,55)">
+        </article>
+        <article class="productInfo"> <!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/18.png"></div>
+          <br>
+          <p class="price">$69</p>
+          <p class="productContent">經典大早餐</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('經典大早餐','img/早餐/18.png',this,69)">
+        </article>
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/早餐/19.png"></div>
+          <br>
+          <p class="price">$109</p>
+          <p class="productContent">雞塊鬆餅大早餐</p>
+          <input type="button" name="button" value="Buy" class="buyButton"  style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('雞塊鬆餅大早餐','img/早餐/19.png',this,109)">
+        </article>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="py-3" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p class="mb-0">© 2020-2021 education. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="mcdonalds.js"></script>
+</html>

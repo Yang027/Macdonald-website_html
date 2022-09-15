@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!--<script type="text/javascript">
+
+var alluser;//=JSON.parse(localStorage.getItem("User"));
+var haveacc=false;
+var havelog;
+function load()
+{	
+	alluser=JSON.parse(localStorage.getItem("User"));
+	havelog=sessionStorage.getItem("havelogin");
+	//alert("havelog:"+havelog);
+	if(havelog=="true"||havelog==true)
+	{
+		location.href="member.html";	
+	}	 
+}
+function check()
+{
+	//<1>先去全部使用者裏面找有沒有email，有就進<2>
+	//<2>判斷密碼是否正確？登錄：提醒錯誤
+   var index=0;
+   haveacc=false;
+   for(var i=0;i<alluser.length;i++)
+		{
+			//alert(alluser[i].name);
+	    	if(alluser[i].email==$.trim($("input[name='email']").val()).toString())//get mail
+			{
+				haveacc=true;
+				index=i;break;
+			}		
+			
+		}	 
+		if(haveacc)
+		{
+			if(alluser[index].password==$.trim($("input[name='ps']").val()).toString())
+			{
+			  //alert("great!");
+				//登錄
+				havelog=true;
+				
+				sessionStorage.setItem("havelogin",havelog);
+				var user=alluser[index];//alert("now id:"+ user.id);
+				sessionStorage.setItem("current",JSON.stringify(user));
+				//alert(user.name);
+				location.href="member.html";
+			}
+			else
+			{
+			 document.getElementById("inputmailinline").value="";
+			 document.getElementById("inputpasswordinline").value="";
+			 alert("wrong password");
+			}
+	   }
+	else{		 
+				 document.getElementById("inputmailinline").value="";
+				document.getElementById("inputpasswordinline").value="";
+				alert("沒有該賬號");
+	}
+}
+	
+
+
+</script>-->
+</head>
+
+<body  onload="LoginLoad()" style="padding-top:100px" class="">
+<nav class="navbar navbar-light bg-light navbar-expand-md fixed-top"> <a class="navbar-brand" href="index.html"><img src="img/mcdonalds.png" width="90px" alt="Brand"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="aboutus.html">關於我們</a></li>
+      <li class="nav-item "><a class="nav-link" href="hot.html">熱銷商品</a></li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">商品類別</a>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="breakfast.html">早餐</a> <a class="dropdown-item" href="worthy.html">午餐</a> </div>
+      </li>
+      <li class="nav-item "><a class="nav-link" href="sweetcard.html">甜心卡&點點卡</a></li>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse text-center justify-content-end" id="navbar">
+    <form class="form-inline mr-auto">
+      <a href="shoppingcart.html" class="navbar-brand"><img src="img/shoppingcart.png" alt="Brand" width="55px"></a> <a class="navbar-brand" href="login.html"><img src="img/user.png" width="32px" alt="Brand"></a>
+    </form>
+    <form class="form-inline  ">
+      <input class="form-control mr-2" type="text" placeholder="搜索">
+    </form>
+    <button class="btn btn-outline-primary" type="submit" onClick="coming_soon('自己用眼睛找')">搜索</button>
+  </div>
+</nav>
+
+<!-- py-5
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"></div>
+      </div>
+    </div>	 
+  </div>
+ --> 
+
+<!-- ------------------ bread-----------------------------------  -->
+<nav>
+  <ol class="breadcrumb  p-3 mb-2 bg-warning text-dark">
+    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+    <li class="breadcrumb-item active">會員賬號登錄</li>
+  </ol>
+</nav>
+<!-- ------------------ bread end-----------------------------------  --> 
+
+<span class="border border-light">
+<div class="text-center text-warning">
+  <h1>會員賬號登錄</h1>
+</div>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form class="form-inline" style="">
+          <div class="form-group">
+            <label>電子郵件</label>
+            <input type="email" class="form-control" name="email" id="inputmailinline" placeholder="E-mail">
+          </div>
+          <br>
+          <div class="form-group">
+            <label>密碼</label>
+            <input type="password" class="form-control" name="ps" id="inputpasswordinline" placeholder="Password">
+          </div>
+          <br>
+          <p> <small class="text-info text-center"><a href="signup.html">還沒賬號？點我註冊</a></small> </p>
+          <!-- <a class="btn mt-4 btn-block btn-outline-primary p-2 " id="__submit"  >Log in</a> -->
+          <button type="button" class="btn mt-4 btn-block btn-outline-primary p-2 " id="__submit"  onClick="check()" >Log in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</span>
+</body>
+<!--<script> $('#__submit').on('click', function (event) {
+
+		event.alert("hope");
+
+	})
+    </script>-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="mcdonalds.js"></script>
+
+</html>

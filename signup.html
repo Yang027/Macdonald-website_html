@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- <script type="text/javascript">
+
+var alluser=[];
+alluser=JSON.parse(localStorage.getItem("User"));
+var peruser={};//object customer
+var haveacc=false;
+ 
+function signup()
+{
+	var nowid=alluser[alluser.length-1].id+1;
+	peruser.id=nowid;
+	//alert("now id:"+ peruser.id);
+	peruser.name=($.trim($("input[name='name']").val()).toString());
+	peruser.phone=($.trim($("input[name='phone']").val()).toString());
+	peruser.address=($.trim($("input[name='address']").val()).toString());
+	peruser.email=($.trim($("input[name='email']").val()).toString());
+	peruser.password=($.trim($("input[name='password']").val()).toString());
+	peruser.discount=[];
+	peruser.transaction=[];
+	
+	if(($.trim($("input[name='name']").val()).toString()).trim()!=""
+	  &&($.trim($("input[name='phone']").val()).toString()).trim()!=""
+	  &&($.trim($("input[name='address']").val()).toString()).trim()!=""
+	  &&($.trim($("input[name='email']").val()).toString()).trim()!=""
+	  &&($.trim($("input[name='password']").val()).toString()).trim()!=""){
+	  alluser.push(peruser);
+	localStorage.setItem("User",JSON.stringify(alluser));
+		//	window.location.assign("login.html");
+	 window.location.href="login.html"; 
+	alert("注冊成功！");
+ 
+	}
+	else
+	{
+		alert("不能有空白");
+	}
+}
+ 
+
+</script>-->
+</head>
+
+<body style="padding-top:100px" class="">
+<nav class="navbar navbar-light bg-light navbar-expand-md fixed-top"> <a class="navbar-brand" href="index.html"><img src="img/mcdonalds.png" width="90px" alt="Brand"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="aboutus.html">關於我們</a></li>
+      <li class="nav-item "><a class="nav-link" href="hot.html">熱銷商品</a></li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">商品類別</a>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="breakfast.html">早餐</a> <a class="dropdown-item" href="worthy.html">午餐</a> </div>
+      </li>
+      <li class="nav-item "><a class="nav-link" href="sweetcard.html">甜心卡&點點卡</a></li>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse text-center justify-content-end" id="navbar">
+    <form class="form-inline mr-auto">
+      <a href="shoppingcart.html" class="navbar-brand"><img src="img/shoppingcart.png" alt="Brand" width="55px" ></a> <a class="navbar-brand" href="login.html"><img src="img/user.png" width="32px" alt="Brand"></a>
+    </form>
+    <form class="form-inline  ">
+      <input class="form-control mr-2" type="text" placeholder="搜索">
+    </form>
+    <button class="btn btn-outline-primary" type="submit" onClick="coming_soon('自己用眼睛找')">搜索</button>
+  </div>
+</nav>
+<nav >
+  <ol class="breadcrumb  p-3 mb-2 bg-warning text-dark" >
+    <li class="breadcrumb-item  active"><a href="index.html">首頁</a></li>
+    <li class="breadcrumb-item active"> 註冊</li>
+  </ol>
+</nav>
+<div class="py-5 ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form class="">
+          <div class="form-group">
+            <label>姓名</label>
+            <input type="Name" class="form-control" placeholder="Name" name="name">
+          </div>
+          <div class="form-group">
+            <label>電話</label>
+            <input type="Phone" class="form-control" placeholder="(+86)09xxxxxxx" name="phone">
+            <small class="form-text text-muted">*只限台灣門號</small> </div>
+          <div class="form-group">
+            <label>住址</label>
+            <input type="Address" class="form-control" placeholder="Address" name="address">
+          </div>
+          <div class="form-group">
+            <label>電子郵件</label>
+            <input type="email" class="form-control" placeholder="Enter email" name="email">
+            <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> --> </div>
+          <div class="form-group">
+            <label>密碼</label>
+            <input type="password" class="form-control" placeholder="Password" name="password">
+          </div>
+		
+          <small class="text-info text-center"><a href="login.html">已經有賬號了？點我登錄</a></small>
+		    <br>
+          <button type="button" class="btn mt-4 btn-block btn-outline-primary p-2" onClick="signup()">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="mcdonalds.js"></script>
+</html>

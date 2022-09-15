@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Happymeal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link href="eCommerceAssets/styles/eCommerceStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body  style="padding-top:100px" class="" onLoad="shoppingcartLoad()">
+<nav class="navbar navbar-light bg-light navbar-expand-md fixed-top"> <a class="navbar-brand" href="index.html"><img src="img/mcdonalds.png" width="90px" alt="Brand"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="aboutus.html">關於我們</a></li>
+      <li class="nav-item "><a class="nav-link" href="hot.html">熱銷商品</a></li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">商品類別</a>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="breakfast.html">早餐</a> <a class="dropdown-item" href="worthy.html">午餐</a> </div>
+      </li>
+      <li class="nav-item "><a class="nav-link" href="sweetcard.html">甜心卡&點點卡</a></li>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse text-center justify-content-end" id="navbar">
+    <form class="form-inline mr-auto">
+      <a href="shoppingcart.html" class="navbar-brand"><img src="img/shoppingcart.png" alt="Brand" width="55px" ></a> <a class="navbar-brand" href="login.html"><img src="img/user.png" width="32px" alt="Brand"></a>
+    </form>
+    <form class="form-inline  ">
+      <input class="form-control mr-2" type="text" placeholder="搜索">
+    </form>
+    <button class="btn btn-outline-primary" type="submit" onClick="coming_soon('自己用眼睛找')">搜索</button>
+  </div>
+</nav>
+<!-- ------------------ bread-----------------------------------  -->
+<nav>
+  <ol class="breadcrumb  p-3 mb-2 bg-warning text-dark">
+    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+    <li class="breadcrumb-item active">熱銷商品</li>
+  </ol>
+</nav>
+<!-- ------------------ bread end-----------------------------------  -->
+<div id=" ">
+  <header> 
+    <!-- This is the header content. It contains Logo and links -->
+    
+    <div id="headerLinks"></div>
+  </header>
+<div id="content">
+    <section class="sidebar"> 
+      <!-- This adds a sidebar with 1 searchbox,2 menusets, each with 4 links -->
+      
+      <div id="menubar">
+        <nav class="menu">
+          <h2><!-- Title for menuset 1 -->所有餐點</h2>
+          <hr>
+          <ul>
+            <!-- List of links under menuset 1 -->
+            <li><a href="breakfast.html" title="Link">早餐</a></li>
+			<li><a href="worthy.html" title="Link">超值全餐</a></li>
+            <li><a href="superworthy.html" title="Link">超值全餐配餐</a></li>
+            <li><a href="superchoice.html" title="Link">極選系列</a></li>
+            <li><a href="ShareMeal.html" title="Link">麥當勞分享盒</a></li>
+            <li><a href="Happymeal.html" title="Link">Happy Meal</a></li>
+            <li><a href="coin.html" title="Link">銅板輕鬆點</a></li>
+            <li><a href="caffee.html" title="Link">McCafe</a></li>
+            <li><a href="dessert.html" title="Link">飲料與點心</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="mainContent">
+      <div class="productRow"><!-- Each product row contains info of 3 elements -->
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/HappyMeal/Happy_Meal.png"></div><br>
+          <p class="price">$80</p>
+          <p class="productContent">四塊麥克雞塊HappyMeal</p>
+          <input type="button" name="button" value="Buy" class="buyButton" style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('四塊麥克雞塊HappyMeal','img/HappyMeal/Happy_Meal.png',this,80)">
+        </article>
+		  <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/HappyMeal/Happy_Meal2.png"></div><br>
+          <p class="price">$65</p>
+          <p class="productContent">漢堡<br>HappyMeal</p>
+          <input type="button" name="button" value="Buy" class="buyButton" style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('漢堡HappyMeal','img/HappyMeal/Happy_Meal2.png',this,65)">
+        </article>
+        <article class="productInfo"><!-- Each individual product description -->
+          <div><img alt="sample" src="img/HappyMeal/Happy_Meal3.png"></div><br>
+          <p class="price">$85</p>
+          <p class="productContent">陽光鱈魚堡<br>HappyMeal</p>
+          <input type="button" name="button" value="Buy" class="buyButton" style="width:120px;height:40px;border:2px blue none;background-color:red;" onclick="cart('陽光鱈魚堡HappyMeal','img/HappyMeal/Happy_Meal3.png',this,85)">
+        </article>
+      </div>
+    </section>
+  </div>
+ 
+</div>
+</body>
+<div class="py-3" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p class="mb-0">© 2020-2021 education. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="mcdonalds.js"></script>
+</html>

@@ -1,0 +1,491 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>member</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link href="tab.css" rel="stylesheet" type="text/css">
+<!--<script type="text/javascript">
+
+
+var firstopen;//judge if first run
+var currentuser;//now user
+var alluser;//all user
+var nowid=-1;//user id
+var discount=[],//all discount
+defaultdiscount={};	//discount object
+var firstopen;
+var dis=[1,2,3];
+var tmp=sessionStorage.getItem("first1");
+function load()
+{
+	//alert('1'+tmp);
+	alluser=JSON.parse(localStorage.getItem("User"));
+	if(tmp==null||tmp=="null")//first run
+	{
+	//-----------------------------------------------	
+	  var flag=true;
+	  firstopen=flag;
+	  sessionStorage.setItem("first1",firstopen);
+	//---------------------------------------------
+	  currentuser=JSON.parse(sessionStorage.getItem("current"));
+	  nowid=currentuser.id;
+	  localStorage.setItem("nowId",nowid);
+	}
+	//alert("now id:"+nowid);
+	
+	if(tmp=="true")//open above once
+	{//restore currentuser!		
+		nowid=localStorage.getItem("nowId");
+		//alert("in le "+nowid);
+		for(var i =0;i<alluser.length;i++)
+		{
+		 if(alluser[i].id==nowid)
+			 {
+				 currentuser=alluser[i];break;
+			 }
+		}
+	}
+	
+  var tabcontent;
+	 // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+//  alert(currentuser.name);
+  document.getElementById("user").innerHTML=currentuser.name;
+  var group;
+	group=document.getElementsByClassName("form-control");
+  for( i=0;i<group.length;i++)
+	  {		  
+		  group[i].readOnly=true;
+	  }
+	document.getElementById("g1").value=currentuser.name;
+	document.getElementById("g2").value=currentuser.phone;
+	document.getElementById("g3").value=currentuser.address;
+	document.getElementById("g4").value=currentuser.email;
+	document.getElementById("g5").value=currentuser.password;
+}
+function c1(flag)
+{		
+	 discount=[];
+	reloaduser();
+	
+	//to check if the discount repeat!
+	var have=true;
+	for(var i=0;i<discount.length;i++)
+		{
+			if(discount[i].id==1)
+				{
+					have=false;break;//repeat!
+				}
+		}
+	if(have==true||have=="true")//have ==true?沒有折價券:有;
+	{
+		//alert("c1here");
+		if(flag=="true"||flag==true)//is click event or reload
+		{		
+			defaultdiscount={};
+			defaultdiscount.id=1;
+			defaultdiscount.Img="img/D1.jpg";
+			defaultdiscount.price=50;
+			defaultdiscount.kind="all";
+			defaultdiscount.menkan=1;
+			discount.push(defaultdiscount);
+			 //save discount
+			 for(var i=0;i<alluser.length;i++)
+			  {		  
+				  if(alluser[i].name==currentuser.name)
+				  {				
+						 alluser[i].discount=discount;
+				  }
+			  }
+			localStorage.setItem("User",JSON.stringify(alluser));
+			//window.location.reload();
+			//c1(false);
+		loaddiscount();
+		}
+		
+	}else
+	{
+		alert("你已經領過這個優惠券了！");
+	//document.getElementById("geta").disable=true;
+	//document.getElementById("geta").value="已領取";
+	}
+}
+function c2(flag)
+{		
+	discount=[];
+	reloaduser();
+	//to check if the discount repeat!
+	var have=true;
+	for(var i=0;i<discount.length;i++)
+		{
+			if(discount[i].id==2)
+				{
+					have=false;break;//repeat!
+				}
+		}
+	if(have==true||have=="true")//have ==true?沒有折價券:有;
+	{
+		//alert("c1here");
+		if(flag=="true"||flag==true)//is click event or reload
+		{		
+			defaultdiscount={};
+			defaultdiscount.id=2;
+			defaultdiscount.Img="img/D2.png";
+			defaultdiscount.price=50;
+			defaultdiscount.kind="all";
+			defaultdiscount.menkan=1;
+			discount.push(defaultdiscount);
+		   //save discount
+			 for(var i=0;i<alluser.length;i++)
+			  {		  
+				  if(alluser[i].name==currentuser.name)
+				  {				
+						 alluser[i].discount=discount;
+				  }
+			  }
+			localStorage.setItem("User",JSON.stringify(alluser));
+			//window.location.reload();
+			//c2(false);
+			loaddiscount();
+		}
+		
+	}else
+	{
+		alert("你已經領過這個優惠券了！");
+//	document.getElementById("getb").disable=true;
+//	document.getElementById("getb").value="已領取";
+	}
+}
+function c3(flag)
+{
+	discount=[];
+	reloaduser();
+	//to check if the discount repeat!
+	var have=true;
+	for(var i=0;i<discount.length;i++)
+		{
+			if(discount[i].id==3)
+				{
+					have=false;break;//repeat!
+				}
+		}
+	if(have==true||have=="true")//have ==true?沒有折價券:有;
+	{
+		//alert("c1here");
+		if(flag=="true"||flag==true)//is click event or reload
+		{
+			defaultdiscount={};
+		//	discount=currentuser.discount;	
+			defaultdiscount.id=3;
+			defaultdiscount.Img="img/D3.png";
+			defaultdiscount.price=50;
+			defaultdiscount.kind="drink";
+			defaultdiscount.menkan=51;
+			discount.push(defaultdiscount);
+			//save discount
+			 for(var i=0;i<alluser.length;i++)
+			  {		  
+				  if(alluser[i].name==currentuser.name)
+				  {				
+						 alluser[i].discount=discount;
+				  }
+			  }
+			localStorage.setItem("User",JSON.stringify(alluser));
+			//window.location.reload();
+			//c3(false);
+		loaddiscount();
+		}
+		
+	}else
+	{
+		alert("你已經領過這個優惠券了！");
+//	document.getElementById("getc").disable=true;
+//	document.getElementById("getc").value="已領取";
+	}
+			
+}
+function _switch(evt, Name) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the link that opened the tab
+  document.getElementById(Name).style.display = "block";
+  evt.currentTarget.className += " active";
+	if(Name=="c")
+		{
+			reloaduser();
+			if(currentuser.discount.length>0){
+			var table =document.getElementById("mydis");
+			table.innerHTML = "";
+			for(var i=0;i<currentuser.discount.length;i++)
+				{
+					var row=table.insertRow(i);
+					var cell1=row.insertCell(0);					
+					cell1.innerHTML="<img src="+discount[i].Img+" "+"width=90%"+">";
+				}
+			}
+			else{document.getElementById("showno").innerHTML="nothing!";}
+		}
+	if(Name=="d")
+		{
+			loaddiscount();		
+	}
+}
+	function reloaduser()
+	{
+		alluser=JSON.parse(localStorage.getItem("User"));
+		for(var i =0;i<alluser.length;i++)
+		{
+		 if(alluser[i].id==nowid)
+			 {
+				 currentuser=alluser[i];break;
+			 }
+		} discount=currentuser.discount;
+	}
+	function loaddiscount()
+	{
+		reloaduser();
+		discount=currentuser.discount;  
+	    for(var i=0;i<discount.length;i++)
+		{
+			var num=dis.indexOf(discount[i].id);
+			if(num!=-1)
+			{
+				switch(num)
+					{
+						case 0:						
+							document.getElementById("geta").disable=true;
+							document.getElementById("geta").value="已領取";
+							break;
+						case 1:
+							document.getElementById("getb").disable=true;
+							document.getElementById("getb").value="已領取";
+							break;
+						case 2:
+							document.getElementById("getc").disable=true;
+							document.getElementById("getc").value="已領取";
+							break;
+					}
+			}
+			else
+			{
+				switch(i+1)
+				{
+					case 1:				
+							document.getElementById("geta").disable=false;
+							document.getElementById("geta").value="領取";						
+						break;
+					case 2:
+							document.getElementById("getb").disable=false;
+							document.getElementById("getb").value="領取";
+						break;
+					case 3:
+							document.getElementById("getc").disable=false;
+							document.getElementById("getc").value="領取";
+
+						break;
+				}
+			}
+		}
+	}
+//更改會員資料
+function modify()
+{
+    var group;
+	group=document.getElementsByClassName("form-control");
+	 
+	if(document.getElementById("cbx").checked==true){
+    for( i=0;i<group.length;i++)
+		{		  
+		   group[i].readOnly=false;
+		}
+	}
+	else
+	{
+		
+	for( i=0;i<group.length;i++)
+		{		  
+		   group[i].readOnly=true;
+		}
+	}
+}
+//保存會員資料
+function save()
+{
+	 //alert( alluser.length);
+     for(var i=0;i<alluser.length;i++)
+	  {		  
+		  if(alluser[i].name==currentuser.name)
+			  {				
+				 alluser[i].name=document.getElementById("g1").value;
+				 alluser[i].phone=document.getElementById("g2").value;
+				 alluser[i].address=document.getElementById("g3").value;
+				 alluser[i].email=document.getElementById("g4").value;
+				 alluser[i].password=document.getElementById("g5").value;
+			  }
+	  }
+	localStorage.setItem("User",JSON.stringify(alluser));
+	window.location.reload();
+}
+
+function dengchu()
+	{
+		var log=sessionStorage.getItem("havelogin");
+		log=false;
+		sessionStorage.setItem("havelogin",log);
+		var user=null;//alert("now id:"+ user.id);
+		sessionStorage.setItem("current",JSON.stringify(user));
+		var tmp="null";
+		sessionStorage.setItem("first1",tmp);
+		location.assign("login.html");
+	}
+
+
+</script>-->
+</head>
+
+<body onLoad="menberLoad()" style="padding-top:100px"  >
+<nav class="navbar navbar-light bg-light navbar-expand-md fixed-top"> <a class="navbar-brand" href="index.html"><img src="img/mcdonalds.png" width="90px" alt="Brand"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="aboutus.html">關於我們</a></li>
+      <li class="nav-item "><a class="nav-link" href="hot.html">熱銷商品</a></li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">商品類別</a>
+        <div class="dropdown-menu"> <a class="dropdown-item" href="breakfast.html">早餐</a> <a class="dropdown-item" href="worthy.html">午餐</a> </div>
+      </li>
+      <li class="nav-item "><a class="nav-link" href="sweetcard.html">甜心卡&點點卡</a></li>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse text-center justify-content-end" id="navbar">
+    <form class="form-inline mr-auto">
+      <a href="shoppingcart.html" class="navbar-brand"><img src="img/shoppingcart.png" alt="Brand" width="55px" ></a> <a class="navbar-brand" href="login.html"><img src="img/user.png" width="32px" alt="Brand"></a>
+    </form>
+    <form class="form-inline  ">
+      <input class="form-control mr-2" type="text" placeholder="搜索">
+    </form>
+   <button class="btn btn-outline-primary" type="submit" onClick="coming_soon('自己用眼睛找')">搜索</button>
+  </div>
+</nav>
+
+ <h6 class="text-primary" align=" right" onClick="dengchu()"><u>登出</u> </h6>  
+	<br>
+<h3 align="left">你好,
+  <label id="user"></label>
+  ！ <a href="superchoice.html">趕快去選購吧 </a>	</h3>
+
+
+<div class="tab">
+  <button class="tablinks" onclick="_switch(event, 'a')">會員基本資料</button>
+  <button class="tablinks" onclick="_switch(event, 'b')">訂單查詢</button>
+  <button class="tablinks" onclick="_switch(event, 'c')">我的折價券</button>
+  <button class="tablinks" onclick="_switch(event, 'd')">折價券專區</button>
+</div>
+<div id="a" class="tabcontent">
+  <h3>會員基本資料</h3>
+  <div class="py-5 ">
+    <p align="right">
+      <input type="checkbox" value="1" align="right" onClick="modify()" id="cbx">
+      修改資料 </p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form class="">
+            <div class="form-group">
+              <label>姓名</label>
+              <input type="Name" class="form-control" placeholder="Name" name="name" id="g1">
+            </div>
+            <br>
+            <div class="form-group">
+              <label>電話</label>
+              <input type="Phone" class="form-control" placeholder="(+86)09xxxxxxx" name="phone" id="g2">
+            </div>
+            <br>
+            <div class="form-group">
+              <label>住址</label>
+              <input type="Address" class="form-control" placeholder="Address" name="address" id="g3">
+            </div>
+            <br>
+            <div class="form-group">
+              <label>電子郵件</label>
+              <input type="email" class="form-control" placeholder="Enter email" name="email" id="g4">
+              <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> --> 
+            </div>
+            <br>
+            <div class="form-group">
+              <label>密碼</label>
+              <input type="password" class="form-control" placeholder="Password" name="password" id="g5">
+            </div>
+            <br>
+            <button type="button" class="btn mt-4 btn-block btn-outline-primary p-2" onClick="save()">保存</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="b" class="tabcontent">
+  <h3>最近訂單</h3>
+  <h1 id="showtrans"> </h1>
+	<table id="mytrans" width="80%">	
+	</table>
+	<br>
+	<label id="detail"> 訂單詳情</label>
+	<br>
+	<table id="checktrans" width="50%">	
+	</table>
+	<blockquote>&nbsp;</blockquote>
+</div>
+<div id="c" class="tabcontent">
+  <h3>我的折價券</h3>
+  <!--<p></p>-->
+	<h1 id="showno"> </h1>
+	<table id="mydis">	
+	</table>
+	<blockquote>&nbsp;</blockquote>
+</div>
+<div id="d" class="tabcontent">
+  <h3>折價券專區</h3>
+  <br>
+  <br>
+  <table border="0" width="80%"  >
+    <tr>
+      <th><img src="img/D1.jpg" width="90%"></th>
+      <th><input type="button" class="btn  btn-block btn-outline-primary"  id="geta" value="領取" onClick="c1(true)"></th>
+    </tr>
+    <tr>
+      <th><img src="img/D2.png" width="90%" ></th>
+      <th><input type="button" class="btn  btn-block btn-outline-primary"  id="getb" value="領取"  onClick="c2(true)"></th>
+    </tr>
+    <tr>
+      <th><img src="img/D3.png" width="90%" ></th>
+      <th><input type="button" class="btn  btn-block btn-outline-primary"  id="getc" value="領取"  onClick="c3(true)"></th>
+    </tr>
+  </table>
+  <blockquote>&nbsp;</blockquote>
+  <p></p>
+</div>
+</body>
+	<script src="mcdonalds.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
