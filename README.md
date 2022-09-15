@@ -10,7 +10,7 @@
 4.查詢歷史訂購記錄<br>
 
 notice：沒有連接資料庫，所有資料都是local端
-
+有資料庫的版本在：https://github.com/Yang027/ASP.Net-MVC-Macdonald-Order-System
 
 使用方法
 ==
