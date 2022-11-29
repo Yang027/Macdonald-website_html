@@ -18,7 +18,3 @@ notice：沒有連接資料庫，所有資料都是local端
 
 非盈利<br>
 non-commercial,education only<br>
-非盈利<br>
-non-commercial,education only<br>
-非盈利<br>
-non-commercial,education only<br>
